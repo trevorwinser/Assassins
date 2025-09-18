@@ -1,38 +1,12 @@
-team add spec
-team add assassins
- 
-team join assassins @a[team=!spec]
+worldborder set 59999968
+scoreboard objectives add game trigger
 
-team modify spec color gray
+tellraw @a [{text:"Welcome to ",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}},{text:"Assassins",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]},color:red}]
 
-scoreboard objectives add Deaths deathCount
-
-scoreboard players set @a[team=!spec] Deaths 0
-
-scoreboard objectives add Alive dummy
-
-execute store result score PC Alive run team list assassins
-
-scoreboard players set @a[team=!spec] Alive 1
-
-scoreboard objectives add Timer dummy
-scoreboard players set ticks Timer 0
-scoreboard players set seconds Timer 0
-scoreboard players set minutes Timer 30
-scoreboard players set hours Timer 1
-
-scoreboard objectives add Assassins dummy
-scoreboard players set start Assassins 0
-
-time set day
-
-worldborder center 0 0
-
-worldborder set 1000
-
-scoreboard objectives add ID dummy
-scoreboard players set @a[team=!spec] ID 0
-scoreboard players set current_id ID 0
-
-scoreboard objectives add Target dummy
-scoreboard players set @a[team=!spec] Target 0
+tellraw @a {text:"The objective is simple: be the last player standing.",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}
+tellraw @a {text:"At the start of the game, each player is given a random target.",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}
+tellraw @a {text:"Each player must eliminate their target before the time limit to be considered 'safe.'",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}
+tellraw @a {text:"A player will be considered safe if their target dies in any way.",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}
+tellraw @a {text:"If your target does not die before the time limit, you are eliminated.",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}
+tellraw @a {text:"The border slowly closes in on players over the course of three hours.",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}
+tellraw @a {text:"Click anywhere to begin.",click_event:{action:"run_command",command:"trigger game set 1"},hover_event:{action:"show_text",value:[{text:"Click anywhere to begin game"}]}}

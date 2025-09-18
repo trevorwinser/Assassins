@@ -16,4 +16,5 @@ execute unless score seconds Timer matches 10.. run scoreboard players set secon
 
 execute as @a[team=!spec] run function assassins:actionbar
 
+execute if score seconds Timer matches 0 if score minutes Timer matches 0 if score hours Timer matches 0 run title @a title "Nobody wins!"
 execute if score seconds Timer matches 0 if score minutes Timer matches 0 if score hours Timer matches 0 run schedule function assassins:restart 1t
